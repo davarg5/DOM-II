@@ -50,10 +50,33 @@ img[2].addEventListener("mousedown", e => {
 });
 
 //#6 mouseover
-img[2].addEventListener("mouseover", e => {
+img[2].addEventListener("mouseup", e => {
     img[2].style.width = "47%";
 });
 
+//#7 scroll
+window.addEventListener("scroll", e => {
+    img[2].style.borderRadius = "50%";
+})
+
+//#8 dblclick
+img[3].setAttribute("id", "img4");
+img[3].addEventListener("dblclick", e => {
+    img[3].remove();
+});
+
+//#9 contextmenu
+document.querySelector("p").setAttribute("id", "para");
+document.getElementById("para").addEventListener("contextmenu", e => {
+    const part = document.getElementById("para");
+    part.style.backgroundColor = "lightGreen";
+});
+
+//#10 resize
+
+window.addEventListener("resize", e => {
+    body.style.backgroundColor = "black";
+})
 //
 
 //navigation prevent default
@@ -65,3 +88,16 @@ for(let i=0; i<nav.length; i++)
         e.preventDefault();
     });
 }
+
+
+window.addEventListener("click", e => {
+    window.style.backgroundColor = "red";
+});
+body.addEventListener("click", e => {
+    e.stopImmediatePropagation();
+});
+body.addEventListener("click", e => {
+    body.style.backgroundColor = "green";
+});
+
+
